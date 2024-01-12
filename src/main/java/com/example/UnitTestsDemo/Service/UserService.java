@@ -17,6 +17,7 @@ public interface UserService {
     public User updateById(User user);
     public void deleteAll();
     public void deleteById(int id);
+    public User findByName(String Name);
 
 
 }

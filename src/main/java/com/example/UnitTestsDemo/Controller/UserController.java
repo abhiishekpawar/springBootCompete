@@ -51,5 +51,10 @@ public class UserController {
         return ResponseEntity.ok().<Void>build();
     }
 
+    @GetMapping("/name/{name}")
+    public ResponseEntity<User> getUserByName(@PathVariable String name){
+        return new ResponseEntity<>(userService.findByName(name),HttpStatus.OK);
+    }
+
 
 }

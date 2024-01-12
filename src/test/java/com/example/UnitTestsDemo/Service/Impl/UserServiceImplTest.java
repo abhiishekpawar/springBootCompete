@@ -90,4 +90,20 @@ class UserServiceImplTest {
     @Test
     void deleteById() {
     }
+
+    @Test
+    void findByName() {
+        //arrange
+        User user1 = new User(1,"user1");
+        when(userRepository.findByName(any())).thenReturn(user1);
+
+        //act
+        User user = userService.findByName(user1.getName());
+
+        //assert
+        assertNotNull(user);
+        assertEquals("user1",user.getName());
+        verify(userRepository,times(1)).findByName(any());
+
+    }
 }
