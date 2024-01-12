@@ -1,7 +1,7 @@
 package com.example.UnitTestsDemo.Controller;
 
 import com.example.UnitTestsDemo.Entity.User;
-import com.example.UnitTestsDemo.Exception.UserNotFoundException;
+//import com.example.UnitTestsDemo.Exception.UserNotFoundException;
 import com.example.UnitTestsDemo.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -34,9 +34,6 @@ public class UserController {
     @GetMapping("/{id}")
     public ResponseEntity<User> getById(@PathVariable int id) {
         User user = userService.getById(id);
-        if (user == null)
-            throw new UserNotFoundException();
-
         return new ResponseEntity<>(user,HttpStatus.OK);
     }
     @PutMapping("/update")
