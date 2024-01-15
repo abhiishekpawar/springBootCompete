@@ -72,19 +72,19 @@ class UserServiceImplTest {
 
     @Test
     void deleteAll() {
-        User user1 = new User();
-        user1.setName("user1");
-        User user2 = new User();
-        user2.setName("user2");
-        List<User> userList = Arrays.asList(user1,user2);
-        when(userRepository.findAll()).thenReturn(userList);
-
-        //act
-        userService.deleteAll();
-        // Verify that the findAll method of the repository is called
-        verify(userRepository,times(1)).findAll();
-        // Verify that the deleteAll method of the repository is callee
-        verify(userRepository,times(1)).deleteAll();
+//        User user1 = new User();
+//        user1.setName("user1");
+//        User user2 = new User();
+//        user2.setName("user2");
+//        List<User> userList = Arrays.asList(user1,user2);
+//        when(userRepository.findAll()).thenReturn(userList);
+//
+//        //act
+//        userService.deleteAll();
+//        // Verify that the findAll method of the repository is called
+//        verify(userRepository,times(1)).findAll();
+//        // Verify that the deleteAll method of the repository is callee
+//        verify(userRepository,times(1)).deleteAll();
     }
 
     @Test

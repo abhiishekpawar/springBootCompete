@@ -25,13 +25,13 @@ public class UserController {
     }
 
 
-    @GetMapping("/")
+    @GetMapping("/getAll")
     public ResponseEntity<List<User>> getAll() {
         List<User> users = userService.getAllUsers();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/get/{id}")
     public ResponseEntity<User> getById(@PathVariable int id) {
         User user = userService.getById(id);
         return new ResponseEntity<>(user,HttpStatus.OK);
